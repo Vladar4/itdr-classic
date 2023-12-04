@@ -1,0 +1,64 @@
+\documentclass[10pt,twoside,twocolumn,openany]{book}
+\usepackage{itdr/core}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{subfiles}
+
+\input{def} % variables
+
+% PDF properties
+\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
+\AtBeginDocument{
+\hypersetup{
+	pdftitle={\title},
+	pdfauthor={\author},
+	pdfkeywords={\title;Into the Dungeon;Supplement;RPG}
+}}
+
+\begin{document}
+\fontfamily{ppl}\selectfont % Set text font
+
+\begin{titlepage}
+\newgeometry{margin=1in,top=1.1in}
+\begin{onecolumn}
+	
+% TITLE
+\begin{center}
+	\textBigTitle{\title}\\
+	\hrule\vspace{2ex}
+	\textSubTitle{\subtitle}\\
+\end{center}
+
+\vspace{-2ex}
+
+\dimage{cover}{468pt}
+
+\vfill
+
+% FOOTNOTE
+\noindent\hspace{-0.75em}\begin{minipage}{0.15\textwidth}
+\centering\includegraphics[width=\linewidth]{itdr_logo.pdf}
+\end{minipage}\hspace{-0.45em}\begin{minipage}{0.7\textwidth}
+{\begin{center}\footnotesize
+\href{https://vladar4.github.io/itdr/}{``\title''} by \author{}\\
+is based on \href{https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk}{``Into the Dungeon: Playtest Edition''} by \href{http://www.bastionland.com/}{Chris McDowall}, licensed under\\
+the \license,\\
+and designed to be used with ``Into the Dungeon: Revived'' ruleset freely available at\\
+\href{https://vladar4.github.io/itdr}{https://vladar4.github.io/itdr} or \href{https://vladar.itch.io/into-the-dungeon-revived}{https://vladar.itch.io/into-the-dungeon-revived}.
+
+% CODE, VERSION AND YEAR
+\vspace{\baselineskip}
+\small\code\\\version\\\year
+\end{center}
+}\end{minipage}\hfill\begin{minipage}{0.15\textwidth}
+\centering\includegraphics[width=\linewidth]{itdr_link.pdf}
+\end{minipage}\hspace{0.5em}
+
+\end{onecolumn}\end{titlepage}
+\restoregeometry
+\clearpage
+
+\subfile{part0}		% Introduction
+\subfile{part_c}	% Classes
+
+\end{document}
